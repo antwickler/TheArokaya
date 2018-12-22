@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">The Arokaya</string>
+    <string name="menu_1">วิเคราะห์ธาตุเจ้าเรือน</string>
+    <string name="menu_2">ธาตุสมุฏฐาน</string>
+    <string name="menu_3">อาหาร &amp; สมุนไพร</string>
+    <string name="menu_4">โรคในแต่ละช่วงอายุ</string>
+    <string name="menu_5">โรงพยาบาลการแพทย์แผนไทย</string>
+    <string name="menu_6">ร้านขายยาสมุนไพร</string>
+    <string name="menu_7">บันทึกข้อมูล / ปรึกษาปัญหาสุขภาพ</string>
+    <string name="action_settings">ตั้งค่า</string>
+
+    <string name="title_activity_splash_screen">SplashScreenActivity</string>
+    <string name="title_activity_check_elemental">วิเคราะห์ธาตุเจ้าเรือน</string>
+    <string name="element_1">ธาตุดิน</string>
+    <string name="element_2">ธาตุน้ำ</string>
+    <string name="element_3">ธาตุลม</string>
+    <string name="element_4">ธาตุไฟ</string>
+
+    <!-- Function check elemental -->
+    <string name="txt">การดูแลสุขภาพด้วยความรู้ทางการแพทย์แผนไทย</string>
+    <string name="setMonth">กรุณาระบุเดือนเกิด</string>
+    <string name="bt_check">Check</string>
+
+    <string name="tab_text_1">ดิน</string>
+    <string name="tab_text_2">น้ำ</string>
+    <string name="tab_text_3">ลม</string>
+    <string name="tab_text_4">ไฟ</string>
+    <string name="title_activity_store_map">Map</string>
+    <string name="title_activity_food_herbal">FoodHerbal</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_age_disease">AgeDisease</string>
+</resources>
