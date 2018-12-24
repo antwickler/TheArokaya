@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/layer_bg"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".CheckElementalActivity"
+    tools:showIn="@layout/activity_check_elemental">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top|center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView_check"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:padding="8dp"
+                android:text="ธาตุเจ้าเรือนประจำตัว"
+                android:textAlignment="center"
+                android:textSize="24sp"
+                tools:layout_editor_absoluteX="107dp"
+                tools:layout_editor_absoluteY="156dp" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/ic_elementals" />
+
+            <TextView
+                android:id="@+id/txt_check"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="24dp"
+                android:paddingRight="24dp"
+                android:text="@string/txt"
+                android:textAlignment="viewStart"
+                android:textAllCaps="false"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/bt_check"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="180dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="50dp"
+                android:fontFamily="@font/psu"
+                android:text="@string/bt_check"
+                android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!--Fragment-->
+</android.support.constraint.ConstraintLayout>
