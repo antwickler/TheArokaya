@@ -18,8 +18,8 @@ import android.widget.LinearLayout;
 
 public class MainActivity extends AppCompatActivity {
 
-    CardView m1, m2, m3, m4, m5, m6;
-    Intent i1, i2, i3, i4, i5, i6;
+    CardView m1, m2, m3, m4, m5, m6, m7;
+    Intent i1, i2, i3, i4, i5, i6, i7;
     LinearLayout ll;
 
     @Override
@@ -38,34 +38,34 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i1);
             }
         });
-//
-//        m2 = (CardView) findViewById(R.id.menu_2);
-//        i2 = new Intent(this, BasicDisease.class);
-//        m2.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(i2);
-//            }
-//        });
-//
-//        m3 = (CardView) findViewById(R.id.menu_3);
-//        i3 = new Intent(this, FoodHerbal.class);
-//        m3.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(i3);
-//            }
-//        });
-//
-//        m4 = (CardView) findViewById(R.id.menu_4);
-//        i4 = new Intent(this, AgeDisease.class);
-//        m4.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(i4);
-//            }
-//        });
-//
+
+        m2 = (CardView) findViewById(R.id.menu_2);
+        i2 = new Intent(this, BasicDisease.class);
+        m2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(i2);
+            }
+        });
+
+        m3 = (CardView) findViewById(R.id.menu_3);
+        i3 = new Intent(this, FoodHerbal.class);
+        m3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(i3);
+            }
+        });
+
+        m4 = (CardView) findViewById(R.id.menu_4);
+        i4 = new Intent(this, AgeDisease.class);
+        m4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(i4);
+            }
+        });
+
 //        m5 = (CardView) findViewById(R.id.menu_5);
 //        i5 = new Intent(this, HospitalMap.class);
 //        m5.setOnClickListener(new View.OnClickListener() {
@@ -78,6 +78,15 @@ public class MainActivity extends AppCompatActivity {
 //        m6 = (CardView) findViewById(R.id.menu_6);
 //        i6 = new Intent(this, StoreMap.class);
 //        m6.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(i6);
+//            }
+//        });
+//
+//        m7 = (CardView) findViewById(R.id.menu_7);
+//        i7 = new Intent(this, User.class);
+//        m7.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
 //                startActivity(i6);

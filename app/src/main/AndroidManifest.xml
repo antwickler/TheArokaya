@@ -33,6 +33,24 @@
             android:label="@string/title_activity_check_elemental"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".BasicDisease"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/menu_2"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".FoodHerbal"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/menu_3"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AgeDisease"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/menu_4"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

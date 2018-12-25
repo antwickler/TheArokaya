@@ -3,22 +3,21 @@ package com.antwickler.thearokaya;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Toast;
 
 public class CheckElementalActivity extends AppCompatActivity {
 
-    int Element_ID = 0;
+    public int Element_ID = 0;
     String[] monthFire = {"มกราคม", "กุมภาพันธ์", "มีนาคม"};    // Element_ID = 4
     String[] monthEarth = {"ตุลาคม", "พฤศจิกายน", "ธันวาคม"};  // Element_ID = 3
     String[] monthWater = {"กรกฎาคม", "สิงหาคม", "กันยายน"};  // Element_ID = 2
     String[] monthWind = {"เมษายน", "พฤษภาคม", "มิถุนายน"};   // Element_ID = 1
-    FragmentPagerAdapter fire;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,20 +83,19 @@ public class CheckElementalActivity extends AppCompatActivity {
 //    }
 //
 //    public void onNothingSelected(AdapterView<?> arg0) {
-//        // TODO Auto-generated method stub
+//        //
 //    }
 
     private void showItemDialog() {
         FragmentManager fm = getSupportFragmentManager();
         final String[] items = {"มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน", "กรกฎาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม"};
-        ItemDialog dialog = ItemDialog.newInstance("กรุณาระบุเดือนเกิด", items);
+        ItemDialog dialog = ItemDialog.newInstance("Please enter your birth month", items);
         dialog.show(fm, null);
         dialog.setOnFinishDialogListener(new ItemDialog.OnFinishDialogListener() {
             @Override
             public void onFinishDialog(int selectedIndex) {
                 if(monthFire[0].equals(selectedIndex) || monthFire[1].equals(selectedIndex) || monthFire[2].equals(selectedIndex)){
                     Element_ID = 4;
-
                 }
                 else if(monthEarth[0].equals(selectedIndex) || monthEarth[1].equals(selectedIndex) || monthEarth[2].equals(selectedIndex)){
                     Element_ID = 3;
@@ -108,11 +106,6 @@ public class CheckElementalActivity extends AppCompatActivity {
                 else if(monthWind[0].equals(selectedIndex) || monthWind[1].equals(selectedIndex) || monthWind[2].equals(selectedIndex)){
                     Element_ID = 1;
                 }
-
-//                if(selectedIndex < 0) {
-//                    return;
-//                }
-//                Toast.makeText(getBaseContext(), items[selectedIndex], Toast.LENGTH_SHORT).show();
             }
         });
     }
