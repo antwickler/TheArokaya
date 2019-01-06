@@ -28,7 +28,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".CheckElementalActivity"
+            android:name=".CheckElemental"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/title_activity_check_elemental"
             android:screenOrientation="portrait"

@@ -23,6 +23,6 @@ public class SplashScreenActivity extends AppCompatActivity {
             }
         };
 
-        new Handler().postDelayed(runnable, 2000);
+        new Handler().postDelayed(runnable, 1000);
     }
 }

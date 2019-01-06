@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
         ll = (LinearLayout) findViewById(R.id.ll);
         m1 = (CardView) findViewById(R.id.menu_1);
-        i1 = new Intent(this, CheckElementalActivity.class);
+        i1 = new Intent(this, CheckElemental.class);
         m1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
