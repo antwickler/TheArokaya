@@ -20,11 +20,11 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/head"
+                android:id="@+id/header"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_marginTop="50dp"
-                android:scaleType="fitXY"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
                 app:srcCompat="@drawable/head" />
 
             <LinearLayout
@@ -305,8 +305,9 @@
             <ImageView
                 android:id="@+id/footer"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:scaleType="fitXY"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
                 app:srcCompat="@drawable/footer" />
 
         </LinearLayout>

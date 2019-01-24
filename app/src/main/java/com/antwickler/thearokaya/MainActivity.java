@@ -66,24 +66,24 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-//        m5 = (CardView) findViewById(R.id.menu_5);
-//        i5 = new Intent(this, HospitalMap.class);
-//        m5.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(i5);
-//            }
-//        });
-//
-//        m6 = (CardView) findViewById(R.id.menu_6);
-//        i6 = new Intent(this, StoreMap.class);
-//        m6.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(i6);
-//            }
-//        });
-//
+        m5 = (CardView) findViewById(R.id.menu_5);
+        i5 = new Intent(this, Hospital.class);
+        m5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(i5);
+            }
+        });
+
+        m6 = (CardView) findViewById(R.id.menu_6);
+        i6 = new Intent(this, Store.class);
+        m6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(i6);
+            }
+        });
+
 //        m7 = (CardView) findViewById(R.id.menu_7);
 //        i7 = new Intent(this, User.class);
 //        m7.setOnClickListener(new View.OnClickListener() {
