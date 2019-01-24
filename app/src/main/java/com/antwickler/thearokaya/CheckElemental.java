@@ -37,7 +37,7 @@ public class CheckElemental extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-//        Fragment earth = (Fragment) getSupportFragmentManager().findFragmentById(R.id.fm_earth);
+//        Fragment earth = (Fragment) getSupportFragmentManager().findragmentById(R.id.fm_earth);
 //        Fragment water = (Fragment) getSupportFragmentManager().findFragmentById(R.id.fm_water);
 //        Fragment wind = (Fragment) getSupportFragmentManager().findFragmentById(R.id.fm_wind);
 //        Fragment fire = (Fragment) getSupportFragmentManager().findFragmentById(R.id.fm_fire);
