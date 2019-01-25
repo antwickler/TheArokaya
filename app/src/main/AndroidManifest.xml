@@ -79,6 +79,32 @@
             android:label="@string/menu_6"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
+
+        <!-- 4 Elemental -->
+        <activity
+            android:name=".CheckEarth"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/element_1"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".CheckWater"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/element_2"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".CheckWind"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/element_3"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".CheckFire"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/element_4"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

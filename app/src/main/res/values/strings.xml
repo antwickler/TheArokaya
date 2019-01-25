@@ -27,17 +27,17 @@
     <!-- Function basic disease -->
     <string name="info_basic">"     ธาตุสมุฏฐาน เป็นความเจ็บป่วยที่มีเหตุมาจากการแปรปรวนของธาตุ มี 3 ลักษณะ คือ\n\n     1. กำเริบ หมายถึง การเพิ่มขึ้นของคุณลักษณะแห่งธาตุนั้น\n     2. หย่อน หมายถึง การลดลงของคุณลักษณะแห่งธาตุนั้น\n     3. พิการ หมายถึง การเปลี่ยนแปลงผิดปกติไปจากธรรมดาของธาตุนั้น\n\n     ภาวะที่ธาตุในร่างกายกำเริบ หย่อน พิการ ในแต่ละธาตุนี้ จะทำให้เกิดความเจ็บป่วยขึ้นในร่างกาย ซึ่งแต่ละธาตุมีคุณลักษณะต่าง ๆ ดังนี้"</string>
 
+    <!-- Function food herb -->
     <string name="tab_text_1">ดิน</string>
     <string name="tab_text_2">น้ำ</string>
     <string name="tab_text_3">ลม</string>
     <string name="tab_text_4">ไฟ</string>
-    <string name="title_activity_store_map">Map</string>
-    <string name="title_activity_food_herbal">FoodHerbal</string>
     <string name="section_format">Hello World from section: %1$d</string>
-    <string name="title_activity_age_disease">AgeDisease</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
+    <!-- Function age disease -->
+    <string name="ageTitle">อายุสมุฏฐาน</string>
+    <string name="ageInfo">"     อายุสมุฏฐาน กล่าวถึงอายุหรือวัยเป็นสาเหตุของโรค ทางการแพทย์แผนไทยแบ่งอายุของคนเราไว้เป็น 3 ช่วงด้วยกัน ได้แก่\n\n     1. ปฐมวัย (อายุ 1 วัน - 16 ปี)\n     2. มัชฌิมวัย (อายุ 16 ปี - 30 ปี)\n     3. ปัจฉิมวัย (อายุ 30 ปี เป็นต้นไป)\n\n     โดยหลักวิชาการแพทย์แผนไทยได้กำหนดโรค และสาเหตุของโรค ที่อาจเกิดในช่วงวัยต่าง ๆ เพื่อใช้ประกอบการวินิจฉัยโรค ตลอดจนการกำหนดตัวยา สำหรับบำบัดโรค"</string>
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_maps">Map</string>
 
 </resources>

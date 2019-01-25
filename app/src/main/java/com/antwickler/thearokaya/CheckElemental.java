@@ -3,30 +3,17 @@ package com.antwickler.thearokaya;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
-
-import java.util.Objects;
 
 public class CheckElemental extends AppCompatActivity {
 
     private Button btCheck;
     private String[] item = {"มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน", "กรกฎาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม"};
-
-//    public int Element_ID = 0;
-//    private String[] monthFire = {"มกราคม", "กุมภาพันธ์", "มีนาคม"};    // Element_ID = 4
-//    private String[] monthEarth = {"ตุลาคม", "พฤศจิกายน", "ธันวาคม"};  // Element_ID = 3
-//    private String[] monthWater = {"กรกฎาคม", "สิงหาคม", "กันยายน"};  // Element_ID = 2
-//    private String[] monthWind = {"เมษายน", "พฤษภาคม", "มิถุนายน"};   // Element_ID = 1
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,11 +23,6 @@ public class CheckElemental extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-//        Fragment earth = (Fragment) getSupportFragmentManager().findragmentById(R.id.fm_earth);
-//        Fragment water = (Fragment) getSupportFragmentManager().findFragmentById(R.id.fm_water);
-//        Fragment wind = (Fragment) getSupportFragmentManager().findFragmentById(R.id.fm_wind);
-//        Fragment fire = (Fragment) getSupportFragmentManager().findFragmentById(R.id.fm_fire);
 
         btCheck = findViewById(R.id.bt_check);
         btCheck.setOnClickListener(new View.OnClickListener() {
@@ -56,46 +38,58 @@ public class CheckElemental extends AppCompatActivity {
                         {
                             // Fire
                             case 0:
-                                //
+                                Intent int1 = new Intent(CheckElemental.this, CheckFire.class);
+                                startActivity(int1);
                                 break;
                             case 1:
-                                //
+                                Intent int2 = new Intent(CheckElemental.this, CheckFire.class);
+                                startActivity(int2);
                                 break;
                             case 2:
-                                //
+                                Intent int3 = new Intent(CheckElemental.this, CheckFire.class);
+                                startActivity(int3);
                                 break;
 
                             // Wind
                             case 3:
-                                //
+                                Intent int4 = new Intent(CheckElemental.this, CheckWind.class);
+                                startActivity(int4);
                                 break;
                             case 4:
-                                //
+                                Intent int5 = new Intent(CheckElemental.this, CheckWind.class);
+                                startActivity(int5);
                                 break;
                             case 5:
-                                //
+                                Intent int6 = new Intent(CheckElemental.this, CheckWind.class);
+                                startActivity(int6);
                                 break;
 
                             // Water
                             case 6:
-                                //
+                                Intent int7 = new Intent(CheckElemental.this, CheckWater.class);
+                                startActivity(int7);
                                 break;
                             case 7:
-                                //
+                                Intent int8 = new Intent(CheckElemental.this, CheckWater.class);
+                                startActivity(int8);
                                 break;
                             case 8:
-                                //
+                                Intent int9 = new Intent(CheckElemental.this, CheckWater.class);
+                                startActivity(int9);
                                 break;
 
                             // Earth
                             case 9:
-                                //
+                                Intent int10 = new Intent(CheckElemental.this, CheckEarth.class);
+                                startActivity(int10);
                                 break;
                             case 10:
-                                //
+                                Intent int11 = new Intent(CheckElemental.this, CheckEarth.class);
+                                startActivity(int11);
                                 break;
                             case 11:
-                                //
+                                Intent int12 = new Intent(CheckElemental.this, CheckEarth.class);
+                                startActivity(int12);
                                 break;
 
                             default:
@@ -108,19 +102,6 @@ public class CheckElemental extends AppCompatActivity {
                 dialog.show();
             }
         });
-
-//        if(monthFire[0].equals(item) || monthFire[1].equals(item) || monthFire[2].equals(item)){
-//            Element_ID = 4;
-//        }
-//        else if(monthEarth[0].equals(item) || monthEarth[1].equals(item) || monthEarth[2].equals(item)){
-//            Element_ID = 3;
-//        }
-//        else if(monthWater[0].equals(item) || monthWater[1].equals(item) || monthWater[2].equals(item)){
-//            Element_ID = 2;
-//        }
-//        else if(monthWind[0].equals(item) || monthWind[1].equals(item) || monthWind[2].equals(item)){
-//            Element_ID = 1;
-//        }
     }
 
     // Back arrow
