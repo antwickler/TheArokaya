@@ -38,22 +38,26 @@ public class BasicDisease extends AppCompatActivity {
                         {
                             // Earth
                             case 0:
-                                //
+                                Intent int1 = new Intent(BasicDisease.this, BasicEarth.class);
+                                startActivity(int1);
                                 break;
 
                             // Water
                             case 1:
-                                //
+                                Intent int2 = new Intent(BasicDisease.this, BasicWater.class);
+                                startActivity(int2);
                                 break;
 
                             // Wind
                             case 2:
-                                //
+                                Intent int3 = new Intent(BasicDisease.this, BasicWind.class);
+                                startActivity(int3);
                                 break;
 
                             // Fire
                             case 3:
-                                //
+                                Intent int4 = new Intent(BasicDisease.this, BasicFire.class);
+                                startActivity(int4);
                                 break;
 
                             default:

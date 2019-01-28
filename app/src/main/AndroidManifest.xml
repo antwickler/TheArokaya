@@ -32,6 +32,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Main menu -->
         <activity
             android:name=".MainActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
@@ -103,6 +105,52 @@
             android:name=".CheckFire"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/element_4"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <!-- Basic Disease -->
+        <activity
+            android:name=".BasicEarth"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/lbd_1"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".BasicWater"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/lbd_2"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".BasicWind"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/lbd_3"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".BasicFire"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/lbd_4"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <!-- Age Disease -->
+        <activity
+            android:name=".AgeEarly"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/age_1"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AgeMiddle"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/age_2"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AgeEnd"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/age_3"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
     </application>

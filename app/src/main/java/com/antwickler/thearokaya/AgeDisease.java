@@ -38,17 +38,20 @@ public class AgeDisease extends AppCompatActivity {
                         {
                             // 0 - 16
                             case 0:
-                                //
+                                Intent int1 = new Intent(AgeDisease.this, AgeEarly.class);
+                                startActivity(int1);
                                 break;
 
                             // 16 - 30
                             case 1:
-                                //
+                                Intent int2 = new Intent(AgeDisease.this, AgeMiddle.class);
+                                startActivity(int2);
                                 break;
 
                             // 30 - More
                             case 2:
-                                //
+                                Intent int3 = new Intent(AgeDisease.this, AgeEnd.class);
+                                startActivity(int3);
                                 break;
 
                             default:
