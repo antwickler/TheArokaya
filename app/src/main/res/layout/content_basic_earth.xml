@@ -34,6 +34,11 @@
                 tools:layout_editor_absoluteX="173dp"
                 tools:layout_editor_absoluteY="222dp" />
 
+            <ListView
+                android:id="@+id/table"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
         </LinearLayout>
     </ScrollView>
 

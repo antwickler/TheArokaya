@@ -47,4 +47,10 @@
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+
+    <!-- Function login -->
+    <string name="minimum_password">Please insert 6 digits</string>
+    <string name="auth_failed">Authentication Fail!</string>
+    <string name="title_activity_authen">AuthenActivity</string>
+    <string name="title_activity_profile">ProfileActivity</string>
 </resources>

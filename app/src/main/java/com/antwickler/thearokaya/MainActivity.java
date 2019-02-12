@@ -76,13 +76,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-//        m7 = (CardView) findViewById(R.id.menu_7);
-//        i7 = new Intent(this, User.class);
-//        m7.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(i6);
-//            }
-//        });
+        m7 = (CardView) findViewById(R.id.menu_7);
+        i7 = new Intent(this, Login.class);
+        m7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(i7);
+            }
+        });
     }
 }
