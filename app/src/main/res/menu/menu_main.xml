@@ -4,9 +4,24 @@
     tools:context="com.antwickler.thearokaya.MainActivity">
 
     <item
+        android:id="@+id/action_post"
+        android:checkable="false"
+        android:enabled="true"
+        android:icon="@drawable/ic_writing"
+        android:title="@string/action_post"
+        android:visible="true" />
+    <item
+        android:id="@+id/action_logout"
+        android:checkable="false"
+        android:enabled="true"
+        android:icon="@drawable/ic_logout"
+        android:title="@string/action_logout"
+        android:visible="true" />
+    <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
         android:title="@string/action_settings"
-        app:showAsAction="never"/>
+        android:visible="false"
+        app:showAsAction="never" />
 
 </menu>

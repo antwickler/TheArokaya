@@ -1,19 +1,24 @@
 package com.antwickler.thearokaya;
 
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v7.app.AlertDialog;
+import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
+import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class AgeDisease extends AppCompatActivity {
 
-    private Button btAge;
-    private String[] itemAge = {"ปฐมวัย (อายุ 1 วัน - 16 ปี)", "มัชฌิมวัย (อายุ 16 ปี - 30 ปี)", "ปัจฉิมวัย (อายุ 30 ปี เป็นต้นไป)"};
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,46 +29,48 @@ public class AgeDisease extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        btAge = findViewById(R.id.bt_age);
-        btAge.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(AgeDisease.this);
-                builder.setTitle("อายุสมุฏฐาน");
+        viewPager = (ViewPager) findViewById(R.id.viewpager);
+        setupViewPager(viewPager);
 
-                builder.setItems(itemAge, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        switch(which)
-                        {
-                            // 0 - 16
-                            case 0:
-                                Intent int1 = new Intent(AgeDisease.this, AgeEarly.class);
-                                startActivity(int1);
-                                break;
+        tabLayout = (TabLayout) findViewById(R.id.tabs);
+        tabLayout.setupWithViewPager(viewPager);
+    }
 
-                            // 16 - 30
-                            case 1:
-                                Intent int2 = new Intent(AgeDisease.this, AgeMiddle.class);
-                                startActivity(int2);
-                                break;
+    private void setupViewPager(ViewPager viewPager) {
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
+        adapter.addFragment(new AgeEarly(), "ปฐมวัย");
+        adapter.addFragment(new AgeMiddle(), "มัชฌิมวัย");
+        adapter.addFragment(new AgeEnd(), "ปัจฉิมวัย");
+        viewPager.setAdapter(adapter);
+    }
 
-                            // 30 - More
-                            case 2:
-                                Intent int3 = new Intent(AgeDisease.this, AgeEnd.class);
-                                startActivity(int3);
-                                break;
+    class ViewPagerAdapter extends FragmentPagerAdapter {
+        private final List<Fragment> mFragmentList = new ArrayList<>();
+        private final List<String> mFragmentTitleList = new ArrayList<>();
 
-                            default:
-                                System.out.println("No match");
-                        }
-                    }
-                });
+        public ViewPagerAdapter(FragmentManager manager) {
+            super(manager);
+        }
 
-                AlertDialog dialog = builder.create();
-                dialog.show();
-            }
-        });
+        @Override
+        public Fragment getItem(int position) {
+            return mFragmentList.get(position);
+        }
+
+        @Override
+        public int getCount() {
+            return mFragmentList.size();
+        }
+
+        public void addFragment(Fragment fragment, String title) {
+            mFragmentList.add(fragment);
+            mFragmentTitleList.add(title);
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return mFragmentTitleList.get(position);
+        }
     }
 
     // Back arrow

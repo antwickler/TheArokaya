@@ -7,7 +7,6 @@
     <string name="menu_5">โรงพยาบาลการแพทย์แผนไทย</string>
     <string name="menu_6">ร้านขายยาสมุนไพร</string>
     <string name="menu_7">ปรึกษาปัญหาสุขภาพ</string>
-    <string name="action_settings">ตั้งค่า</string>
 
     <string name="title_activity_splash_screen">SplashScreenActivity</string>
     <string name="title_activity_check_elemental">วิเคราะห์ธาตุเจ้าเรือน</string>
@@ -50,4 +49,7 @@
     <!-- Function login & member -->
     <string name="minimum_password">Please insert 6 digits</string>
     <string name="auth_failed">Authentication Fail!</string>
+    <string name="action_settings">ตั้งค่า</string>
+    <string name="action_post">กระทู้ของฉัน</string>
+    <string name="action_logout">LOGOUT</string>
 </resources>

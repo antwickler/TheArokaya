@@ -29,8 +29,9 @@
                 android:layout_marginTop="8dp"
                 android:paddingLeft="8dp"
                 android:paddingRight="8dp"
-                android:textAlignment="viewStart"
-                android:textSize="18sp"
+                android:text="ฉกาลวาโย"
+                android:textAlignment="center"
+                android:textSize="30sp"
                 tools:layout_editor_absoluteX="173dp"
                 tools:layout_editor_absoluteY="222dp" />
 
