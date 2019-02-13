@@ -27,7 +27,6 @@
 
     <!-- Set overflow menu -->
     <style name="overflowMenu" parent="Widget.AppCompat.PopupMenu.Overflow">
-        <item name="android:popupBackground">@color/colorAccent</item>
         <item name="android:dropDownHorizontalOffset">-16dp</item>
         <item name="android:dropDownVerticalOffset">40dp</item>
     </style>

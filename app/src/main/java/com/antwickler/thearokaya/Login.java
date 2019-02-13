@@ -6,7 +6,6 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,7 +22,7 @@ public class Login extends AppCompatActivity {
     public EditText txt_email, txt_password;
     public FirebaseAuth auth;
     public ProgressBar progressBar;
-    public Button login_action, forget_pass;
+    public Button login_action, forget_pass, register;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,14 +36,17 @@ public class Login extends AppCompatActivity {
         txt_email = (EditText) findViewById(R.id.txt_email);
         txt_password = (EditText) findViewById(R.id.txt_password);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
-        login_action = (Button) findViewById(R.id.login_action);
+        login_action = (Button) findViewById(R.id.register_action);
         forget_pass = (Button) findViewById(R.id.forget_pass);
 
         auth = FirebaseAuth.getInstance();
         if (auth.getCurrentUser() != null) {
-            Toast.makeText(getApplicationContext(), "OK, you already logged in!", Toast.LENGTH_SHORT).show();
+            // Toast.makeText(getApplicationContext(), "OK, you already logged in!", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(Login.this, Member.class);
+            startActivity(intent);
             finish();
         }
+
         login_action.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -63,7 +65,7 @@ public class Login extends AppCompatActivity {
 
                 progressBar.setVisibility(View.VISIBLE);
 
-                //authenticate user
+                // Authenticate user
                 auth.signInWithEmailAndPassword(email, password)
                         .addOnCompleteListener(Login.this, new OnCompleteListener<AuthResult>() {
                             @Override
@@ -76,7 +78,9 @@ public class Login extends AppCompatActivity {
                                         Toast.makeText(Login.this, getString(R.string.auth_failed), Toast.LENGTH_LONG).show();
                                     }
                                 } else {
-                                    Toast.makeText(getApplicationContext(), "OK, you already logged in!", Toast.LENGTH_SHORT).show();
+                                    // Toast.makeText(getApplicationContext(), "OK, you already logged in!", Toast.LENGTH_SHORT).show();
+                                    Intent intent = new Intent(Login.this, Member.class);
+                                    startActivity(intent);
                                     finish();
                                 }
                             }
@@ -84,6 +88,23 @@ public class Login extends AppCompatActivity {
             }
         });
 
+        forget_pass = (Button) findViewById(R.id.forget_pass);
+        forget_pass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent forget = new Intent(Login.this, ForgetEditPassword.class);
+                startActivity(forget);
+            }
+        });
+
+        register = (Button) findViewById(R.id.register);
+        register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent signUp = new Intent(Login.this, Register.class);
+                startActivity(signUp);
+            }
+        });
     }
 
     @Override
@@ -91,18 +112,4 @@ public class Login extends AppCompatActivity {
         super.onResume();
         progressBar.setVisibility(View.GONE);
     }
-
-    // Back arrow
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        int id = item.getItemId();
-//        if (id != android.R.id.home) {
-//            return super.onOptionsItemSelected(item);
-//        }
-//        Intent intent;
-//        intent = new Intent(Login.this, MainActivity.class);
-//        startActivity(intent);
-//
-//        return true;
-//    }
 }

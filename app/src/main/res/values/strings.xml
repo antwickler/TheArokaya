@@ -6,7 +6,7 @@
     <string name="menu_4">โรคในแต่ละช่วงอายุ</string>
     <string name="menu_5">โรงพยาบาลการแพทย์แผนไทย</string>
     <string name="menu_6">ร้านขายยาสมุนไพร</string>
-    <string name="menu_7">บันทึกข้อมูล / ปรึกษาปัญหาสุขภาพ</string>
+    <string name="menu_7">ปรึกษาปัญหาสุขภาพ</string>
     <string name="action_settings">ตั้งค่า</string>
 
     <string name="title_activity_splash_screen">SplashScreenActivity</string>
@@ -47,10 +47,7 @@
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-
-    <!-- Function login -->
+    <!-- Function login & member -->
     <string name="minimum_password">Please insert 6 digits</string>
     <string name="auth_failed">Authentication Fail!</string>
-    <string name="title_activity_authen">AuthenActivity</string>
-    <string name="title_activity_profile">ProfileActivity</string>
 </resources>
