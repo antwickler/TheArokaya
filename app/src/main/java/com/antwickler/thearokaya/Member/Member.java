@@ -1,4 +1,4 @@
-package com.antwickler.thearokaya;
+package com.antwickler.thearokaya.Member;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -14,6 +14,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ProgressBar;
 
+import com.antwickler.thearokaya.MainActivity;
+import com.antwickler.thearokaya.R;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Member extends AppCompatActivity {

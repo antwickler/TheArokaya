@@ -1,17 +1,19 @@
-package com.antwickler.thearokaya;
+package com.antwickler.thearokaya.Basic;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
-public class CheckEarth extends AppCompatActivity {
+import com.antwickler.thearokaya.R;
+
+public class BasicWater extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_check_earth);
+        setContentView(R.layout.activity_basic_water);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -26,7 +28,7 @@ public class CheckEarth extends AppCompatActivity {
             return super.onOptionsItemSelected(item);
         }
         Intent intent;
-        intent = new Intent(CheckEarth.this, CheckElemental.class);
+        intent = new Intent(BasicWater.this, BasicDisease.class);
         startActivity(intent);
 
         return true;

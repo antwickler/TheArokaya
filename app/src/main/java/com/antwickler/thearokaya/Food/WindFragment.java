@@ -1,4 +1,4 @@
-package com.antwickler.thearokaya;
+package com.antwickler.thearokaya.Food;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -6,9 +6,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class AgeEnd extends Fragment {
+import com.antwickler.thearokaya.R;
 
-    public AgeEnd() {
+public class WindFragment extends Fragment {
+
+    public WindFragment() {
         // Required empty public constructor
     }
 
@@ -21,6 +23,6 @@ public class AgeEnd extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_age_end, container, false);
+        return inflater.inflate(R.layout.fragment_wind, container, false);
     }
 }

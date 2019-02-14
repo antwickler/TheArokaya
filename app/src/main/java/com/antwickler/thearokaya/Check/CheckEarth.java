@@ -1,4 +1,4 @@
-package com.antwickler.thearokaya;
+package com.antwickler.thearokaya.Check;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,12 +6,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
-public class CheckWater extends AppCompatActivity {
+import com.antwickler.thearokaya.R;
+
+public class CheckEarth extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_check_water);
+        setContentView(R.layout.activity_check_earth);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -26,7 +28,7 @@ public class CheckWater extends AppCompatActivity {
             return super.onOptionsItemSelected(item);
         }
         Intent intent;
-        intent = new Intent(CheckWater.this, CheckElemental.class);
+        intent = new Intent(CheckEarth.this, CheckElemental.class);
         startActivity(intent);
 
         return true;

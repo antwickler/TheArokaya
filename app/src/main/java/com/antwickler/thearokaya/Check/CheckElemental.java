@@ -1,4 +1,4 @@
-package com.antwickler.thearokaya;
+package com.antwickler.thearokaya.Check;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -9,6 +9,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+
+import com.antwickler.thearokaya.MainActivity;
+import com.antwickler.thearokaya.R;
 
 public class CheckElemental extends AppCompatActivity {
 

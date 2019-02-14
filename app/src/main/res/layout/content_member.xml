@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".Member"
+    tools:context=".Member.Member"
     tools:showIn="@layout/activity_member">
 
     <ScrollView
@@ -27,15 +27,13 @@
 
                 <Button
                     android:id="@+id/button"
-                    style="@android:style/Widget.DeviceDefault.Light.Button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    style="@style/Widget.MaterialComponents.Button"
+                    android:layout_width="140dp"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@color/colorPrimary"
                     android:fontFamily="@font/psu"
                     android:text="ตั้งกระทู้"
-                    android:textColor="#FFFFFF"
-                    android:textStyle="bold" />
+                    android:textAppearance="@style/TextAppearance.AppCompat.Button" />
 
                 <EditText
                     android:id="@+id/search"
@@ -52,15 +50,13 @@
 
                 <Button
                     android:id="@+id/btn_search"
-                    style="@android:style/Widget.DeviceDefault.Light.Button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    style="@style/Widget.MaterialComponents.Button"
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@color/colorPrimary"
                     android:fontFamily="@font/psu"
                     android:text="ค้นหา"
-                    android:textColor="#FFFFFF"
-                    android:textStyle="bold" />
+                    android:textAppearance="@style/TextAppearance.AppCompat.Button" />
 
             </LinearLayout>
 

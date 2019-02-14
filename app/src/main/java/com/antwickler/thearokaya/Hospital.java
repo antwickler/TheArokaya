@@ -18,6 +18,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 public class Hospital extends AppCompatActivity implements GoogleMap.OnMyLocationButtonClickListener,
         GoogleMap.OnMyLocationClickListener, OnMapReadyCallback {
@@ -58,13 +59,14 @@ public class Hospital extends AppCompatActivity implements GoogleMap.OnMyLocatio
         mMap.setOnMyLocationButtonClickListener(this);
         mMap.setOnMyLocationClickListener(this);
 
-        LatLng lo = new LatLng(7.8827805, 98.3830324);
+        LatLng lo = new LatLng(13.749716, 100.516245);
+        mMap.addMarker(new MarkerOptions().position(lo).title("โรงพยาบาลการแพทย์แผนไทยและการแพทย์ผสมผสาน"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(lo));
 
         // Zoom In-Out
         mMap.getUiSettings().setZoomControlsEnabled(true);
-        mMap.setMinZoomPreference(12.0f);
-        mMap.setMaxZoomPreference(24.0f);
+        mMap.setMinZoomPreference(8.0f);
+        mMap.setMaxZoomPreference(32.0f);
 
         updateLocationUI();
         getLocationPermission();
@@ -89,12 +91,12 @@ public class Hospital extends AppCompatActivity implements GoogleMap.OnMyLocatio
 
     @Override
     public void onMyLocationClick(@NonNull Location location) {
-        Toast.makeText(this, "Current location:\n" + location, Toast.LENGTH_LONG).show();
+        // Toast.makeText(this, "Current location:\n" + location, Toast.LENGTH_LONG).show();
     }
 
     @Override
     public boolean onMyLocationButtonClick() {
-        Toast.makeText(this, "MyLocation button clicked", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "คุณอยู่ที่นี่", Toast.LENGTH_SHORT).show();
         return false;
     }
 

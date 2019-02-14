@@ -41,25 +41,25 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".CheckElemental"
+            android:name=".Check.CheckElemental"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/title_activity_check_elemental"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".BasicDisease"
+            android:name=".Basic.BasicDisease"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/menu_2"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".FoodHerbal"
+            android:name=".Food.FoodHerbal"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/menu_3"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".AgeDisease"
+            android:name=".Age.AgeDisease"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/menu_4"
             android:screenOrientation="portrait"
@@ -84,25 +84,25 @@
 
         <!-- 4 Elemental -->
         <activity
-            android:name=".CheckEarth"
+            android:name=".Check.CheckEarth"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/element_1"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".CheckWater"
+            android:name=".Check.CheckWater"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/element_2"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".CheckWind"
+            android:name=".Check.CheckWind"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/element_3"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".CheckFire"
+            android:name=".Check.CheckFire"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/element_4"
             android:screenOrientation="portrait"
@@ -110,67 +110,47 @@
 
         <!-- Basic Disease -->
         <activity
-            android:name=".BasicEarth"
+            android:name=".Basic.BasicEarth"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/lbd_1"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".BasicWater"
+            android:name=".Basic.BasicWater"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/lbd_2"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".BasicWind"
+            android:name=".Basic.BasicWind"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/lbd_3"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".BasicFire"
+            android:name=".Basic.BasicFire"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/lbd_4"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
 
-        <!-- Age Disease -->
-        <activity
-            android:name=".AgeEarly"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:label="@string/age_1"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".AgeMiddle"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:label="@string/age_2"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".AgeEnd"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:label="@string/age_3"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
-
         <!-- Member -->
         <activity
-            android:name=".Login"
+            android:name=".Member.Login"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Register"
+            android:name=".Member.Register"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ForgetEditPassword"
+        <activity android:name=".Member.ForgetEditPassword"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Member"
+            android:name=".Member.Member"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/menu_7"
             android:screenOrientation="portrait"

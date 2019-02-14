@@ -1,20 +1,19 @@
-package com.antwickler.thearokaya;
+package com.antwickler.thearokaya.Basic;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.widget.ListView;
 
-public class BasicEarth extends AppCompatActivity {
+import com.antwickler.thearokaya.R;
 
-    ListView earth;
+public class BasicFire extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_basic_earth);
+        setContentView(R.layout.activity_basic_fire);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -29,7 +28,7 @@ public class BasicEarth extends AppCompatActivity {
             return super.onOptionsItemSelected(item);
         }
         Intent intent;
-        intent = new Intent(BasicEarth.this, BasicDisease.class);
+        intent = new Intent(BasicFire.this, BasicDisease.class);
         startActivity(intent);
 
         return true;

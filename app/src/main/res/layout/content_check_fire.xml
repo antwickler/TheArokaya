@@ -7,7 +7,7 @@
     android:layout_margin="5dp"
     android:background="@drawable/layer_bg"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".CheckFire"
+    tools:context=".Check.CheckFire"
     tools:showIn="@layout/activity_check_fire">
 
     <ScrollView

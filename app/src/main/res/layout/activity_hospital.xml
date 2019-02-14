@@ -23,6 +23,7 @@
     </android.support.design.widget.AppBarLayout>
 
     <include
+        android:id="@+id/include"
         layout="@layout/content_hospital"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

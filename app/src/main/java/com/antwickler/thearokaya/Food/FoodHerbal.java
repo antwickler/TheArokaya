@@ -1,4 +1,4 @@
-package com.antwickler.thearokaya;
+package com.antwickler.thearokaya.Food;
 
 import android.content.Intent;
 import android.support.design.widget.TabLayout;
@@ -11,6 +11,9 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.view.MenuItem;
+
+import com.antwickler.thearokaya.MainActivity;
+import com.antwickler.thearokaya.R;
 
 import java.util.ArrayList;
 import java.util.List;

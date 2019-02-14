@@ -8,6 +8,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.LinearLayout;
 
+import com.antwickler.thearokaya.Age.AgeDisease;
+import com.antwickler.thearokaya.Basic.BasicDisease;
+import com.antwickler.thearokaya.Check.CheckElemental;
+import com.antwickler.thearokaya.Food.FoodHerbal;
+import com.antwickler.thearokaya.Member.Login;
+
 public class MainActivity extends AppCompatActivity {
 
     CardView m1, m2, m3, m4, m5, m6, m7;

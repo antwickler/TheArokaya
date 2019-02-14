@@ -1,17 +1,22 @@
-package com.antwickler.thearokaya;
+package com.antwickler.thearokaya.Basic;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.widget.ListView;
 
-public class BasicWind extends AppCompatActivity {
+import com.antwickler.thearokaya.R;
+
+public class BasicEarth extends AppCompatActivity {
+
+    ListView earth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_basic_wind);
+        setContentView(R.layout.activity_basic_earth);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -26,7 +31,7 @@ public class BasicWind extends AppCompatActivity {
             return super.onOptionsItemSelected(item);
         }
         Intent intent;
-        intent = new Intent(BasicWind.this, BasicDisease.class);
+        intent = new Intent(BasicEarth.this, BasicDisease.class);
         startActivity(intent);
 
         return true;
