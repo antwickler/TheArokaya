@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="3dp"
+    android:background="@drawable/item_state"
+    android:orientation="horizontal"
+    android:padding="5dp">
+
+    <TextView
+        android:id="@+id/textView_name"
+        android:layout_width="220dp"
+        android:layout_row="0"
+        android:layout_column="0"
+        android:layout_columnWeight="1"
+        android:layout_gravity="top|left"
+        android:layout_marginRight="10dp"
+        android:gravity="top|left"
+        android:inputType="text"
+        android:singleLine="true"
+        android:text="name"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView_detail"
+        android:layout_width="260dp"
+        android:layout_row="0"
+        android:layout_column="1"
+        android:layout_gravity="top|left"
+        android:layout_marginRight="10dp"
+        android:cursorVisible="true"
+        android:gravity="top|left"
+        android:inputType="textMultiLine"
+        android:singleLine="false"
+        android:text="detail"
+        android:textSize="18sp" />
+
+</GridLayout>

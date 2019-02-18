@@ -5,4 +5,7 @@
     <color name="colorAccent">#84C198</color>
 
     <color name="splashScreenBg">#84C198</color>
+    <color name="item_active">#84C198</color>
+    <color name="item_normal">#ffffff</color>
+    <color name="textSelect">#8F0000</color>
 </resources>

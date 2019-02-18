@@ -13,12 +13,9 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
 
 public class Hospital extends AppCompatActivity implements GoogleMap.OnMyLocationButtonClickListener,
         GoogleMap.OnMyLocationClickListener, OnMapReadyCallback {
@@ -58,10 +55,6 @@ public class Hospital extends AppCompatActivity implements GoogleMap.OnMyLocatio
         mMap.setMyLocationEnabled(true);
         mMap.setOnMyLocationButtonClickListener(this);
         mMap.setOnMyLocationClickListener(this);
-
-        LatLng lo = new LatLng(13.749716, 100.516245);
-        mMap.addMarker(new MarkerOptions().position(lo).title("โรงพยาบาลการแพทย์แผนไทยและการแพทย์ผสมผสาน"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(lo));
 
         // Zoom In-Out
         mMap.getUiSettings().setZoomControlsEnabled(true);
