@@ -56,6 +56,14 @@
     <string name="snow_3">"     สมุฏฐานวาตะ ควรใช้อาหารรสสุขุม จืด เปรี้ยว เผ็ดร้อน หอมเย็น ขม เค็ม ฝาด  ในมื้อเช้าและมื้อเย็นควรลดอาหารรสเย็นและรสเค็มลง เนื่องจากเป็นอาหารแสลงกับเสมหะ ตอนเช้าเป็นสมุฏฐานเสมหะ ส่วนตอนเย็นเป็นสมุฏฐานวาตะที่เจือตามมาจากฤดูฝน ในผู้สูงอายุถ้าให้เสมหะและวาตะกำเริบร่วมกัน จะทำให้สุขภาพอ่อนแอ อาจทำให้ระบบหายใจ การไหลเวียนของเลือดไปเลี้ยงสมองและหัวใจติดขัดได้ อาหารที่เหมาะสำหรับผู้สูงอายุในฤดูนี้ ควรมีรสสุขุม เปรี้ยว เผ็ดร้อน หอมร้อน ขม เค็ม\n\n"</string>
 
     <!-- Function food herb -->
+    <string name="enter_text_to_search">ป้อนข้อความเพื่อค้นหา</string>
+    <string name="search_via">ค้นหาจาก</string>
+    <string name="filter_by">กรองการค้นหา</string>
+    <string name="contains">ประกอบด้วย</string>
+    <string name="starts_with">ขึ้นต้นด้วย</string>
+    <string name="element">ธาตุเจ้าเรือน</string>
+    <string name="food">เมนูอาหาร</string>
+    <string name="herb">สมุนไพร</string>
 
     <!-- Function login & member -->
     <string name="minimum_password">Please insert 6 digits</string>
