@@ -68,7 +68,13 @@
     <!-- Function login & member -->
     <string name="minimum_password">Please insert 6 digits</string>
     <string name="auth_failed">Authentication Fail!</string>
+
+    <!-- Menu -->
     <string name="action_settings">ตั้งค่า</string>
     <string name="action_post">กระทู้ของฉัน</string>
     <string name="action_logout">LOGOUT</string>
+    <string name="action_map1">ภูมิประเทศ</string>
+    <string name="action_map2">ดาวเทียม</string>
+    <string name="action_map3">ผสม</string>
+
 </resources>

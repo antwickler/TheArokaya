@@ -1,0 +1,28 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.antwickler.thearokaya.Store">
+
+    <item
+        android:id="@+id/normal"
+        android:checkable="false"
+        android:enabled="true"
+        android:icon="@drawable/normal"
+        android:title="@string/action_map1"
+        android:visible="true" />
+    <item
+        android:id="@+id/satellite"
+        android:checkable="false"
+        android:enabled="true"
+        android:icon="@drawable/satellite"
+        android:title="@string/action_map2"
+        android:visible="true" />
+    <item
+        android:id="@+id/hybrid"
+        android:checkable="false"
+        android:enabled="true"
+        android:icon="@drawable/hybrid"
+        android:title="@string/action_map3"
+        android:visible="true" />
+
+</menu>
