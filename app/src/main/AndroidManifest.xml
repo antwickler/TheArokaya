@@ -70,13 +70,13 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".Hospital"
+            android:name=".Hospital.Hospital"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/menu_5"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Store"
+            android:name=".Store.Store"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/menu_6"
             android:screenOrientation="portrait"

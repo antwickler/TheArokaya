@@ -1,4 +1,4 @@
-package com.antwickler.thearokaya;
+package com.antwickler.thearokaya.Hospital;
 
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -18,20 +18,18 @@ import android.text.style.ImageSpan;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
-import com.google.android.gms.maps.CameraUpdateFactory;
+import com.antwickler.thearokaya.MainActivity;
+import com.antwickler.thearokaya.R;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
 
-public class Store extends AppCompatActivity implements GoogleMap.OnMyLocationButtonClickListener,
+public class Hospital extends AppCompatActivity implements GoogleMap.OnMyLocationButtonClickListener,
         GoogleMap.OnMyLocationClickListener, OnMapReadyCallback {
 
+    private static final String TAG = Hospital.class.getSimpleName();
     private GoogleMap mMap;
     private static final int PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1;
     private boolean mLocationPermissionGranted;
@@ -39,15 +37,14 @@ public class Store extends AppCompatActivity implements GoogleMap.OnMyLocationBu
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_store);
+        setContentView(R.layout.activity_hospital);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map2);
+                .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
     }
 
@@ -75,16 +72,6 @@ public class Store extends AppCompatActivity implements GoogleMap.OnMyLocationBu
 
         updateLocationUI();
         getLocationPermission();
-
-        // Add a marker in Sydney and move the camera
-        LatLng store = new LatLng(7.883594, 98.3874513);
-        mMap.addMarker(new MarkerOptions().position(store).title("ร้านฝุ่ยชุนถ่อง"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(store));
-
-        // Zoom In-Out
-        mMap.getUiSettings().setZoomControlsEnabled(true);
-        mMap.setMinZoomPreference(12.0f);
-        mMap.setMaxZoomPreference(24.0f);
     }
 
     @Override
@@ -176,7 +163,7 @@ public class Store extends AppCompatActivity implements GoogleMap.OnMyLocationBu
         switch (item.getItemId()) {
             // Back arrow
             case android.R.id.home:
-                Intent back = new Intent(Store.this, MainActivity.class);
+                Intent back = new Intent(Hospital.this, MainActivity.class);
                 startActivity(back);
                 break;
 

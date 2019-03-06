@@ -12,7 +12,9 @@ import com.antwickler.thearokaya.Age.AgeDisease;
 import com.antwickler.thearokaya.Basic.BasicDisease;
 import com.antwickler.thearokaya.Check.CheckElemental;
 import com.antwickler.thearokaya.Food.FoodHerbal;
+import com.antwickler.thearokaya.Hospital.Hospital;
 import com.antwickler.thearokaya.Member.Login;
+import com.antwickler.thearokaya.Store.Store;
 
 public class MainActivity extends AppCompatActivity {
 
