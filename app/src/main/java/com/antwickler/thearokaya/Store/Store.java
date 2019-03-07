@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.location.Location;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -22,12 +23,34 @@ import android.widget.Toast;
 
 import com.antwickler.thearokaya.MainActivity;
 import com.antwickler.thearokaya.R;
+import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.StatusLine;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 public class Store extends AppCompatActivity implements GoogleMap.OnMyLocationButtonClickListener,
         GoogleMap.OnMyLocationClickListener, OnMapReadyCallback {
@@ -40,6 +63,11 @@ public class Store extends AppCompatActivity implements GoogleMap.OnMyLocationBu
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_store);
+
+        if (android.os.Build.VERSION.SDK_INT > 9) {
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+            StrictMode.setThreadPolicy(policy);
+        }
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -76,15 +104,79 @@ public class Store extends AppCompatActivity implements GoogleMap.OnMyLocationBu
         updateLocationUI();
         getLocationPermission();
 
-        // Add a marker in Sydney and move the camera
-        LatLng store = new LatLng(7.883594, 98.3874513);
-        mMap.addMarker(new MarkerOptions().position(store).title("ร้านฝุ่ยชุนถ่อง"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(store));
+        List<Double> x = new ArrayList<Double>();
+        List<Double> y = new ArrayList<Double>();
+        List<String> name = new ArrayList<String>();
+        List<String> address = new ArrayList<String>();
 
-        // Zoom In-Out
-        mMap.getUiSettings().setZoomControlsEnabled(true);
-        mMap.setMinZoomPreference(12.0f);
-        mMap.setMaxZoomPreference(24.0f);
+        ArrayList<HashMap<String, String>> location = null;
+        String url = "http://sniperkla.lnw.mn/arokaya/getStore.php";
+        try {
+            JSONArray data = new JSONArray(getHttpGet(url));
+
+            location = new ArrayList<HashMap<String, String>>();
+            HashMap<String, String> store;
+
+            for (int i = 0; i < data.length(); i++) {
+                JSONObject c = data.getJSONObject(i);
+                store = new HashMap<String, String>();
+                store.clear();
+                store.put("Latitude", c.getString("Latitude"));
+                store.put("Longitude", c.getString("Longitude"));
+                store.put("LocationName", c.getString("LocationName"));
+                store.put("Address", c.getString("Address"));
+                location.add(store);
+            }
+        } catch (JSONException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        for (int i = 0; i < location.size(); i++) {
+            x.add(Double.parseDouble(location.get(i).get("Latitude").toString()));
+            y.add(Double.parseDouble(location.get(i).get("Longitude").toString()));
+            name.add(location.get(i).get("LocationName").toString());
+            address.add(location.get(i).get("Address").toString());
+        }
+
+        // Mark store from MySQL
+        List<Marker> markersList = new ArrayList<Marker>();
+        for (int i = 0; i < location.size(); i++) {
+            Marker herb = mMap.addMarker(new MarkerOptions().position(new LatLng(x.get(i), y.get(i)))
+                    .title(name.get(i))
+                    .snippet(address.get(i))
+                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.herb_mark)));
+            markersList.add(herb);
+
+            CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(new LatLng(x.get(i), y.get(i)), 11);
+            mMap.animateCamera(cameraUpdate);
+        }
+    }
+
+    public static String getHttpGet(String url) {
+        StringBuilder str = new StringBuilder();
+        HttpClient client = new DefaultHttpClient();
+        HttpGet httpGet = new HttpGet(url);
+        try {
+            HttpResponse response = client.execute(httpGet);
+            StatusLine statusLine = response.getStatusLine();
+            int statusCode = statusLine.getStatusCode();
+            if (statusCode == 200) {
+                HttpEntity entity = response.getEntity();
+                InputStream content = entity.getContent();
+                BufferedReader reader = new BufferedReader(new InputStreamReader(content));
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    str.append(line);
+                }
+            } else {
+                Log.e("Log", "Failed to download result..");
+            }
+        } catch (ClientProtocolException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return str.toString();
     }
 
     @Override
