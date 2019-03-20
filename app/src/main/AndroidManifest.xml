@@ -134,23 +134,23 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
 
-        <!-- Member -->
+        <!-- Post -->
         <activity
-            android:name=".Member.Login"
+            android:name=".Post.Login"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Member.Register"
+            android:name=".Post.Register"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Member.ForgetEditPassword"
+        <activity android:name=".Post.ForgetEditPassword"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Member.Member"
+            android:name=".Post.Post"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/menu_7"
             android:screenOrientation="portrait"

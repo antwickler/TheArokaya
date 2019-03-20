@@ -1,4 +1,4 @@
-package com.antwickler.thearokaya.Member;
+package com.antwickler.thearokaya.Post;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -18,7 +18,7 @@ import com.antwickler.thearokaya.MainActivity;
 import com.antwickler.thearokaya.R;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class Member extends AppCompatActivity {
+public class Post extends AppCompatActivity {
 
     public ProgressBar progressBar;
     public FirebaseAuth.AuthStateListener authListener;
@@ -27,7 +27,7 @@ public class Member extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_member);
+        setContentView(R.layout.activity_post);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -67,7 +67,7 @@ public class Member extends AppCompatActivity {
         switch (item.getItemId()) {
             // Back arrow
             case android.R.id.home:
-                Intent back = new Intent(Member.this, MainActivity.class);
+                Intent back = new Intent(Post.this, MainActivity.class);
                 startActivity(back);
                 break;
 
@@ -78,7 +78,7 @@ public class Member extends AppCompatActivity {
             // Logged out
             case R.id.action_logout:
                 auth.signOut();
-                Intent intent = new Intent(Member.this, MainActivity.class);
+                Intent intent = new Intent(Post.this, MainActivity.class);
                 startActivity(intent);
                 finish();
                 break;
