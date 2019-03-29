@@ -1,15 +1,8 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.antwickler.thearokaya.Post.Post">
+    tools:context="com.antwickler.thearokaya.Post.Question">
 
-    <item
-        android:id="@+id/action_post"
-        android:checkable="false"
-        android:enabled="true"
-        android:icon="@drawable/ic_writing"
-        android:title="@string/action_post"
-        android:visible="true" />
     <item
         android:id="@+id/action_logout"
         android:checkable="false"
@@ -17,11 +10,5 @@
         android:icon="@drawable/ic_logout"
         android:title="@string/action_logout"
         android:visible="true" />
-    <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:title="@string/action_settings"
-        android:visible="false"
-        app:showAsAction="never" />
 
 </menu>

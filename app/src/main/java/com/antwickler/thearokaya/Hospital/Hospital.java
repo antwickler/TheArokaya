@@ -32,6 +32,8 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -59,6 +61,8 @@ public class Hospital extends AppCompatActivity implements GoogleMap.OnMyLocatio
     private static final int PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1;
     private boolean mLocationPermissionGranted;
 
+    private DatabaseReference mDatabase;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,6 +85,7 @@ public class Hospital extends AppCompatActivity implements GoogleMap.OnMyLocatio
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+        mDatabase = FirebaseDatabase.getInstance().getReference();
 
         if (ContextCompat.checkSelfPermission(this.getApplicationContext(),
                 android.Manifest.permission.ACCESS_FINE_LOCATION)
@@ -103,80 +108,80 @@ public class Hospital extends AppCompatActivity implements GoogleMap.OnMyLocatio
         updateLocationUI();
         getLocationPermission();
 
-        List<Double> x = new ArrayList<Double>();
-        List<Double> y = new ArrayList<Double>();
-        List<String> name = new ArrayList<String>();
-        List<String> address = new ArrayList<String>();
-
-        ArrayList<HashMap<String, String>> location = null;
-        String url = "http://sniperkla.lnw.mn/arokaya/getHospital.php";
-        try {
-            JSONArray data = new JSONArray(getHttpGet(url));
-
-            location = new ArrayList<HashMap<String, String>>();
-            HashMap<String, String> hospital;
-
-            for (int i = 0; i < data.length(); i++) {
-                JSONObject c = data.getJSONObject(i);
-                hospital = new HashMap<String, String>();
-                hospital.clear();
-                hospital.put("Latitude", c.getString("Latitude"));
-                hospital.put("Longitude", c.getString("Longitude"));
-                hospital.put("LocationName", c.getString("LocationName"));
-                hospital.put("Address", c.getString("Address"));
-                location.add(hospital);
-            }
-        } catch (JSONException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        for (int i = 0; i < location.size(); i++) {
-            x.add(Double.parseDouble(location.get(i).get("Latitude").toString()));
-            y.add(Double.parseDouble(location.get(i).get("Longitude").toString()));
-            name.add(location.get(i).get("LocationName").toString());
-            address.add(location.get(i).get("Address").toString());
-        }
-
-        // Mark store from MySQL
-        List<Marker> markersList = new ArrayList<Marker>();
-        for (int i = 0; i < location.size(); i++) {
-            Marker medical = mMap.addMarker(new MarkerOptions().position(new LatLng(x.get(i), y.get(i)))
-                    .title(name.get(i))
-                    .snippet(address.get(i))
-                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.hospital_mark)));
-            markersList.add(medical);
-
-            CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(new LatLng(x.get(i), y.get(i)), 11);
-            mMap.animateCamera(cameraUpdate);
-        }
+//        List<Double> x = new ArrayList<Double>();
+//        List<Double> y = new ArrayList<Double>();
+//        List<String> name = new ArrayList<String>();
+//        List<String> address = new ArrayList<String>();
+//
+//        ArrayList<HashMap<String, String>> location = null;
+//        String url = "http://sniperkla.lnw.mn/arokaya/getHospital.php";
+//        try {
+//            JSONArray data = new JSONArray(getHttpGet(url));
+//
+//            location = new ArrayList<HashMap<String, String>>();
+//            HashMap<String, String> hospital;
+//
+//            for (int i = 0; i < data.length(); i++) {
+//                JSONObject c = data.getJSONObject(i);
+//                hospital = new HashMap<String, String>();
+//                hospital.clear();
+//                hospital.put("Latitude", c.getString("Latitude"));
+//                hospital.put("Longitude", c.getString("Longitude"));
+//                hospital.put("LocationName", c.getString("LocationName"));
+//                hospital.put("Address", c.getString("Address"));
+//                location.add(hospital);
+//            }
+//        } catch (JSONException e) {
+//            // TODO Auto-generated catch block
+//            e.printStackTrace();
+//        }
+//        for (int i = 0; i < location.size(); i++) {
+//            x.add(Double.parseDouble(location.get(i).get("Latitude").toString()));
+//            y.add(Double.parseDouble(location.get(i).get("Longitude").toString()));
+//            name.add(location.get(i).get("LocationName").toString());
+//            address.add(location.get(i).get("Address").toString());
+//        }
+//
+//        // Mark store from MySQL
+//        List<Marker> markersList = new ArrayList<Marker>();
+//        for (int i = 0; i < location.size(); i++) {
+//            Marker medical = mMap.addMarker(new MarkerOptions().position(new LatLng(x.get(i), y.get(i)))
+//                    .title(name.get(i))
+//                    .snippet(address.get(i))
+//                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.hospital_mark)));
+//            markersList.add(medical);
+//
+//            CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(new LatLng(x.get(i), y.get(i)), 11);
+//            mMap.animateCamera(cameraUpdate);
+//        }
     }
 
-    public static String getHttpGet(String url) {
-        StringBuilder str = new StringBuilder();
-        HttpClient client = new DefaultHttpClient();
-        HttpGet httpGet = new HttpGet(url);
-        try {
-            HttpResponse response = client.execute(httpGet);
-            StatusLine statusLine = response.getStatusLine();
-            int statusCode = statusLine.getStatusCode();
-            if (statusCode == 200) {
-                HttpEntity entity = response.getEntity();
-                InputStream content = entity.getContent();
-                BufferedReader reader = new BufferedReader(new InputStreamReader(content));
-                String line;
-                while ((line = reader.readLine()) != null) {
-                    str.append(line);
-                }
-            } else {
-                Log.e("Log", "Failed to download result..");
-            }
-        } catch (ClientProtocolException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return str.toString();
-    }
+//    public static String getHttpGet(String url) {
+//        StringBuilder str = new StringBuilder();
+//        HttpClient client = new DefaultHttpClient();
+//        HttpGet httpGet = new HttpGet(url);
+//        try {
+//            HttpResponse response = client.execute(httpGet);
+//            StatusLine statusLine = response.getStatusLine();
+//            int statusCode = statusLine.getStatusCode();
+//            if (statusCode == 200) {
+//                HttpEntity entity = response.getEntity();
+//                InputStream content = entity.getContent();
+//                BufferedReader reader = new BufferedReader(new InputStreamReader(content));
+//                String line;
+//                while ((line = reader.readLine()) != null) {
+//                    str.append(line);
+//                }
+//            } else {
+//                Log.e("Log", "Failed to download result..");
+//            }
+//        } catch (ClientProtocolException e) {
+//            e.printStackTrace();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        return str.toString();
+//    }
 
     @Override
     public void onRequestPermissionsResult(int requestCode,
