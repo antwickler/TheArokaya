@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.antwickler.thearokaya">
 
     <!--
@@ -17,11 +18,13 @@
 
     <application
         android:allowBackup="true"
+        android:appComponentFactory="whateverString"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        tools:replace="android:appComponentFactory">
         <activity
             android:name=".SplashScreenActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
@@ -136,8 +139,43 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
 
-        <!-- Question -->
-
+        <!-- Post -->
+        <activity
+            android:name=".Post.Question"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/menu_7"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Post.SignIn"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="เข้าสู่ระบบ"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Post.SignUp"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="สมัครสมาชิก"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Post.Profile"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="ข้อมูลส่วนตัว"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Post.NewPost"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="ตั้งกระทู้"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Post.PostDetail"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="แสดงความคิดเห็น"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Base.Theme.AppCompat" />

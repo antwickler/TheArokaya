@@ -13,6 +13,7 @@ import com.antwickler.thearokaya.Basic.BasicDisease;
 import com.antwickler.thearokaya.Check.CheckElemental;
 import com.antwickler.thearokaya.Food.FoodHerbal;
 import com.antwickler.thearokaya.Hospital.Hospital;
+import com.antwickler.thearokaya.Post.SignIn;
 import com.antwickler.thearokaya.Store.Store;
 
 public class MainActivity extends AppCompatActivity {
@@ -83,13 +84,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-//        m7 = (CardView) findViewById(R.id.menu_7);
-//        i7 = new Intent(this, Question.class);
-//        m7.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(i7);
-//            }
-//        });
+        m7 = (CardView) findViewById(R.id.menu_7);
+        i7 = new Intent(this, SignIn.class);
+        m7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(i7);
+            }
+        });
     }
 }
