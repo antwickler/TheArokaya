@@ -12,21 +12,30 @@ import android.text.style.ForegroundColorSpan;
 import android.text.style.ImageSpan;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.antwickler.thearokaya.MainActivity;
 import com.antwickler.thearokaya.R;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class Profile extends AppCompatActivity {
 
     private static final String TAG = "Profile";
 
-    private DatabaseReference mProfileReference;
+    public DatabaseReference mProfile;
 
     private TextView mNameView;
+    private TextView mEmailView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,11 +46,42 @@ public class Profile extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        mProfileReference = FirebaseDatabase.getInstance().getReference()
-                .child("users");
+        mNameView = (TextView) findViewById(R.id.profile_name);
+        mEmailView = (TextView) findViewById(R.id.profile_email);
 
-        mNameView = findViewById(R.id.profile_name);
+        // Get firebase database
+        final String uid = getUid();
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        mProfile = database.getReference().child("users").child(uid);
+
+        mProfile.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                Map map = (Map) dataSnapshot.getValue();
+                String name = String.valueOf(map.get("username"));
+                mNameView.setText(name);
+
+                Map map2 = (Map) dataSnapshot.getValue();
+                String email = String.valueOf(map2.get("email"));
+                mEmailView.setText(email);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
     }
+
+    public String getUid() {
+        return FirebaseAuth.getInstance().getCurrentUser().getUid();
+    }
+
+//    public void onClickEditText(View view) {
+//        Map<String, Object> value = new HashMap<String, Object>();
+//        value.put("username",mNameView.getText().toString());
+//        mProfile.updateChildren(value);
+//    }
 
     // Overflow menu
     @Override
